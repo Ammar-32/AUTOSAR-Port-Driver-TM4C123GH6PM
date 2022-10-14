@@ -135,165 +135,8 @@ typedef enum
   PULL_DOWN
 } Port_InternalResistor;
 
-/* Description: Enum to hold Digital Function (GPIOPCTL PMCx Bit Field Encoding) */
-typedef enum
-{
-  /* GPIO Mode value = 0 */
-  GPIO_MODE = 0,
-
-  /* ADC (Analog) Mode value = 1 */
-  ADC_MODE = 1U,
-
-  /* Value = 1 */
-  PA0_U0Rx = 1U,
-  PA1_U0Tx = 1U,
-  PB0_U1Rx = 1U,
-  PB1_U1Tx = 1U,
-  PC4_U4Rx = 1U,
-  PC5_U4Tx = 1U,
-  PC6_U3Rx = 1U,
-  PC7_U4Tx = 1U,
-  PD0_SSI3Clk = 1U,
-  PD1_SSI3Fss = 1U,
-  PD2_SSI3Rx = 1U,
-  PD3_SSI3Tx = 1U,
-  PD4_U6Rx = 1U,
-  PD5_U6Tx = 1U,
-  PD6_U2Rx = 1U,
-  PD7_U2Tx = 1U,
-  PE0_U7Rx = 1U,
-  PE1_U7Tx = 1U,
-  PE4_U5Rx = 1U,
-  PE5_U5Tx = 1U,
-  PF0_U1RTS = 1U,
-  PF1_U1CTS = 1U,
-
-  /* Value = 2 */
-  PA2_SSI0Clk = 2U,
-  PA3_SSI0Fss = 2U,
-  PA4_SSI0Rx = 2U,
-  PA5_SSI0Tx = 2U,
-  PB4_SSI2Clk = 2U,
-  PB5_SSI2Fss = 2U,
-  PB6_SSI2Rx = 2U,
-  PB7_SSI2Tx = 2U,
-  PC4_U1Rx = 2U,
-  PC5_U1Tx = 2U,
-  PD0_SSI1Clk = 2U,
-  PD1_SSI1Fss = 2U,
-  PD2_SSI1Rx = 2U,
-  PD3_SSI1Tx = 2U,
-  PF0_SSI1Rx = 2U,
-  PF1_SSI1Tx = 2U,
-  PF2_SSI1Clk = 2U,
-  PF3_SSI1Fss = 2U,
-
-  /* Value = 3 */
-  PA6_I2C1SCL = 3U,
-  PA7_I2C1SDA = 3U,
-  PB2_I2C0SCL = 3U,
-  PB3_I2C0SDA = 3U,
-  PD0_I2C3SCL = 3U,
-  PD1_I2C3SDA = 3U,
-  PE4_I2C2SCL = 3U,
-  PE5_I2C2SDA = 3U,
-  PF0_CAN0Rx = 3U,
-  PF3_CAN0Tx = 3U,
-
-  /* Value = 4 */
-  PB4_M0PWM2 = 4U,
-  PB5_M0PWM3 = 4U,
-  PB6_M0PWM0 = 4U,
-  PB7_M0PWM1 = 4U,
-  PC4_M0PWM6 = 4U,
-  PC5_M0PWM7 = 4U,
-  PD0_M0PWM6 = 4U,
-  PD1_M0PWM7 = 4U,
-  PD2_M0FAULT0 = 4U,
-  PD6_M0FAULT0 = 4U,
-  PE4_M0PWM4 = 4U,
-  PE5_M0PWM5 = 4U,
-  PF2_M0FAULT0 = 4U,
-
-  /* Value = 5 */
-  PA6_M1PWM2 = 5U,
-  PA7_M1PWM3 = 5U,
-  PD0_M1PWM0 = 5U,
-  PD1_M1PWM1 = 5U,
-  PE4_M1PWM2 = 5U,
-  PE5_M1PWM3 = 5U,
-  PF0_M1PWM4 = 5U,
-  PF1_M1PWM5 = 5U,
-  PF2_M1PWM6 = 5U,
-  PF3_M1PWM7 = 5U,
-  PF4_M1FAULT0 = 5U,
-
-  /* Value = 6 */
-  PC4_IDX1 = 6U,
-  PC5_PhA1 = 6U,
-  PC6_PhB1 = 6U,
-  PD3_IDX0 = 6U,
-  PD6_PhA0 = 6U,
-  PD7_PhB0 = 6U,
-  PF0_PhA0 = 6U,
-  PF1_PhB0 = 6U,
-  PF4_IDX0 = 6U,
-
-  /* Value = 7 */
-  PB0_T2CCP0 = 7U,
-  PB1_T2CCP1 = 7U,
-  PB2_T3CCP0 = 7U,
-  PB3_T3CCP1 = 7U,
-  PB4_T1CCP0 = 7U,
-  PB5_T1CCP1 = 7U,
-  PB6_T0CCP0 = 7U,
-  PB7_T0CCP1 = 7U,
-  PC4_WT0CCP0 = 7U,
-  PC5_WT0CCP1 = 7U,
-  PC6_WT1CCP0 = 7U,
-  PC7_WT1CCP1 = 7U,
-  PD0_WT2CCP0 = 7U,
-  PD1_WT2CCP1 = 7U,
-  PD2_WT3CCP0 = 7U,
-  PD3_WT3CCP1 = 7U,
-  PD4_WT4CCP0 = 7U,
-  PD5_WT4CCP1 = 7U,
-  PD6_WT5CCP0 = 7U,
-  PD7_WT5CCP1 = 7U,
-  PF0_T0CCP0 = 7U,
-  PF1_T0CCP1 = 7U,
-  PF2_T1CCP0 = 7U,
-  PF3_T1CCP1 = 7U,
-  PF4_T2CCP0 = 7U,
-
-  /* Value = 8 */
-  PA0_CAN1Rx = 8U,
-  PA1_CAN1Tx = 8U,
-  PB4_CAN0Rx = 8U,
-  PB5_CAN0Tx = 8U,
-  PC4_U1RTS = 8U,
-  PC5_U1CTS = 8U,
-  PC6_USB0EPEN = 8U,
-  PC7_USB0PFLT = 8U,
-  PD2_USB0EPEN = 8U,
-  PD3_USB0PFLT = 8U,
-  PD7_NMI = 8U,
-  PE4_CAN0Rx = 8U,
-  PE5_CAN0Tx = 8U,
-  PF0_NMI = 8U,
-  PF4_USB0EPEN = 8U,
-
-  /* Value = 9 */
-  PF0_C0o = 9U,
-  PF1_C1o = 9U,
-
-  /* No modes with values 10-13 */
-
-  /* Value = 14 */
-  PF1_TRD1 = 14U,
-  PF2_TRD0 = 14U,
-  PF3_TRCLK = 14U
-} Port_PinModeType;
+/* Description: typedefinition to hold the pin mode*/
+typedef uint8 Port_PinModeType;
 
 /* Description: Type of the external data structure containing the initialization data for this module.
  *	1. The PORT Which the pin belongs to. eg. PortA, PortB etc..
@@ -323,54 +166,54 @@ typedef struct
 } Port_ConfigType;
 
 /* MCU Pin IDs */
-#define PA0		(Port_PinType)0U
-#define PA1		(Port_PinType)1U
-#define PA2		(Port_PinType)2U
-#define PA3		(Port_PinType)3U
-#define PA4		(Port_PinType)4U
-#define PA5		(Port_PinType)5U
-#define PA6		(Port_PinType)6U
-#define PA7		(Port_PinType)7U
+#define PA0 (Port_PinType)0U
+#define PA1 (Port_PinType)1U
+#define PA2 (Port_PinType)2U
+#define PA3 (Port_PinType)3U
+#define PA4 (Port_PinType)4U
+#define PA5 (Port_PinType)5U
+#define PA6 (Port_PinType)6U
+#define PA7 (Port_PinType)7U
 
-#define PB0		(Port_PinType)8U
-#define PB1		(Port_PinType)9U
-#define PB2		(Port_PinType)10U
-#define PB3		(Port_PinType)11U
-#define PB4		(Port_PinType)12U
-#define PB5		(Port_PinType)13U
-#define PB6		(Port_PinType)14U
-#define PB7		(Port_PinType)15U
+#define PB0 (Port_PinType)8U
+#define PB1 (Port_PinType)9U
+#define PB2 (Port_PinType)10U
+#define PB3 (Port_PinType)11U
+#define PB4 (Port_PinType)12U
+#define PB5 (Port_PinType)13U
+#define PB6 (Port_PinType)14U
+#define PB7 (Port_PinType)15U
 
-#define PC0		(Port_PinType)16U
-#define PC1		(Port_PinType)17U
-#define PC2		(Port_PinType)18U
-#define PC3		(Port_PinType)19U
-#define PC4		(Port_PinType)20U
-#define PC5		(Port_PinType)21U
-#define PC6		(Port_PinType)22U
-#define PC7		(Port_PinType)23U
+#define PC0 (Port_PinType)16U
+#define PC1 (Port_PinType)17U
+#define PC2 (Port_PinType)18U
+#define PC3 (Port_PinType)19U
+#define PC4 (Port_PinType)20U
+#define PC5 (Port_PinType)21U
+#define PC6 (Port_PinType)22U
+#define PC7 (Port_PinType)23U
 
-#define PD0		(Port_PinType)24U
-#define PD1		(Port_PinType)25U
-#define PD2		(Port_PinType)26U
-#define PD3		(Port_PinType)27U
-#define PD4		(Port_PinType)28U
-#define PD5		(Port_PinType)29U
-#define PD6		(Port_PinType)30U
-#define PD7		(Port_PinType)31U
+#define PD0 (Port_PinType)24U
+#define PD1 (Port_PinType)25U
+#define PD2 (Port_PinType)26U
+#define PD3 (Port_PinType)27U
+#define PD4 (Port_PinType)28U
+#define PD5 (Port_PinType)29U
+#define PD6 (Port_PinType)30U
+#define PD7 (Port_PinType)31U
 
-#define PE0		(Port_PinType)32U
-#define PE1		(Port_PinType)33U
-#define PE2		(Port_PinType)34U
-#define PE3		(Port_PinType)35U
-#define PE4		(Port_PinType)36U
-#define PE5		(Port_PinType)37U
+#define PE0 (Port_PinType)32U
+#define PE1 (Port_PinType)33U
+#define PE2 (Port_PinType)34U
+#define PE3 (Port_PinType)35U
+#define PE4 (Port_PinType)36U
+#define PE5 (Port_PinType)37U
 
-#define PF0		(Port_PinType)38U
-#define PF1		(Port_PinType)39U
-#define PF2		(Port_PinType)40U
-#define PF3		(Port_PinType)41U
-#define PF4		(Port_PinType)42U
+#define PF0 (Port_PinType)38U
+#define PF1 (Port_PinType)39U
+#define PF2 (Port_PinType)40U
+#define PF3 (Port_PinType)41U
+#define PF4 (Port_PinType)42U
 /*******************************************************************************
  *                      Function Prototypes                                    *
  *******************************************************************************/
